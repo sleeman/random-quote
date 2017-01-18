@@ -32,54 +32,15 @@ var quotes = [{
     citation: "brainyquote.com",
 
 }, ];
-  
-	// var theQuotes = [];
 
-  
-  //   if(!theQuotes.includes(x) ){
-		// theQuotes.push(x);
-  //   }
-
- //  if (quotes.length === 0) {
-	// 	quotes = theQuotes;
-	// 	theQuotes = []; 
-	// }
-
-    // var selected = quotes[x];
-
-
- //    quotes.splice(x,1);
- //    theQuotes.push(selected);
-
-
-
-
-var displayedQuotes = []; // Variable to keep track of quotes that have been displayed in an array.
+var displayedQuotes = []; 
 var selectedQuote;
 var backgroundColors = [];
 var timer
 
-
-
-// GET A RANDOM QUOTE. The top number of the Math.random method equals the length of the quotes array.
 function getRandomQuote() {
-    // console.log(displayedQuotes.indexOf(selectedQuote));
-    // Resets displayedQuotes if all quotes have been displayed once.
-    if (displayedQuotes.length === quotes.length) {displayedQuotes = [];}
-    // Selects a random quote. Selects again if random quote is in displayedQuotes.
-    // console.log(displayedQuotes.indexOf(quotes[x]) === -1);
-    // do {
-        // var x = Math.floor(Math.random() * quotes.length);
-        // selectedQuote = quotes[x];
-        
-    // } while (displayedQuotes.indexOf(selectedQuote) > -1);
 
-   // if(displayedQuotes.indexOf(selectedQuote) === -1){
-   //  var x = Math.floor(Math.random() * quotes.length);
-   //      selectedQuote = quotes[x];
-   //   displayedQuotes.push(selectedQuote);
-   // }
-// console.log(selectedQuote);
+    if (displayedQuotes.length === quotes.length) {displayedQuotes = [];}
 
 // if (!Array.prototype.elemetExists) {
 //     Array.prototype.elemetExists = function (string) {
@@ -90,45 +51,22 @@ function getRandomQuote() {
 do {
         var x = Math.floor(Math.random() * quotes.length);
         selectedQuote = quotes[x];
-
         
     } while (~displayedQuotes.indexOf(selectedQuote));
 
-
-   var iteratore = quotes.map(function(ele, i, arr){
-    var x = Math.floor(Math.random() * arr.length);
-    // if(arr.indexOf(ele) === i){
-        return ele;
-    // };
-    // console.log(ele);
-    // console.log(i);
-    // console.log(arr);
-   });
-
- // displayedQuotes.push(iteratore);
-   // console.log(iteratore);
-   // console.log(iteratore[x]);
     return selectedQuote;
-
 }
-
-
 
 function printQuote(){
 
 	var getQuote = getRandomQuote();
     displayedQuotes.push(getQuote);
     console.log(getQuote.saying)
-    // console.log(displayedQuotes.indexOf(getQuote) > -1);
-    
 
-
-    var    sayingInner = "<p class='quote'>" + getQuote.saying + "</p>";
-    var    sourceInner = "<p class='source'>" + getQuote.author ;
+    var sayingInner = "<p class='quote'>" + getQuote.saying + "</p>";
+    var sourceInner = "<p class='source'>" + getQuote.author ;
         sourceInner += "<span class='citation'>" + getQuote.citation + "</span>";
         sourceInner += "<span class='year'>" + (getQuote.year ? getQuote.year: " " ) + "</span>";
-        sourceInner += "</p>";
-    // var quote = document.getElementsByClassName('quote').innerHTML;
 
     var quoteInner = sayingInner + sourceInner;
     
@@ -141,14 +79,12 @@ function printQuote(){
         return color;
     }
 
-    
     var bodyEle = document.body;
     console.log(bodyEle)
     document.body.style.backgroundColor = getRandomColor();
-
     var theQuotes = document.getElementById('quote-box').innerHTML = quoteInner;
 }
 
 
-setInterval(printQuote, 10000)
+setInterval(printQuote, 10000);
 
