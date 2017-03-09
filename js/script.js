@@ -86,5 +86,5 @@ function printQuote(){
 }
 
 
-setInterval(printQuote, 10000);
+setInterval(printQuote, 1000);
 
