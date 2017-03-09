@@ -52,7 +52,7 @@ do {
         var x = Math.floor(Math.random() * quotes.length);
         selectedQuote = quotes[x];
         
-    } while (~displayedQuotes.indexOf(selectedQuote));
+    } while (displayedQuotes.includes(selectedQuote));
 
     return selectedQuote;
 }
