@@ -12,6 +12,7 @@ body {
   right: 10%;
   width: 80%;
   line-height: .5;
+  
 }
 .quote {
   font-size: 4rem;
@@ -19,6 +20,7 @@ body {
   line-height: 1.1;
   position: relative;
   margin: 0;
+
   } 
 .quote:before, .quote:after {
   font-size: 6rem;
@@ -56,6 +58,16 @@ body {
 .year:before {
   content: ", ";
   font-style: normal;
+}
+
+.business{
+  display: block;
+  line-height: 2;
+  /*margin-left: 2em;*/
+}
+
+.business:before {
+  content: "—";
 }
 
 #loadQuote {
